@@ -15,10 +15,9 @@ class String
   def self.create_colors
     #code to generate all color methods goes here
     @@colors.each do |k, v|
-    	# why self refers to String class rather than instance?
       class_eval(%Q{
                    def #{k}
-                     '\e[#{v}m#{self}\e[0m'
+                     '\e[#{v}m' + self + '\e[0m'
                    end
 
       })
