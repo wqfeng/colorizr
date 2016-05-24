@@ -9,7 +9,7 @@ class String
   end
 
   def self.sample_colors
-    @@colors.each {|k, v| puts "This is \e[#{v}m#{k}\e[0m"}
+    @@colors.each {|k, v| puts "This is #{k.to_s.send k}"}
   end
 
   def self.create_colors
